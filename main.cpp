@@ -1,6 +1,4 @@
-﻿
-
-#include "perinlucde.h";
+﻿#include "perinlucde.h";
 
 void loadNames() {
     ifstream file(namefile);
@@ -51,11 +49,21 @@ void startScrolling(HWND hwnd) {
     SetTimer(hwnd, 1, Movingspeed, NULL);
     SetWindowText(hButton2, "滚动中");
 }
-
 void stopScrolling(HWND hwnd) {
     scrolling = false;
     KillTimer(hwnd, 1);
     SetWindowText(hButton2, "滚动名单");
+}
+
+void W_not_top(HWND hwnd) {
+    SetWindowPos(hwnd, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+    SetWindowText(hButton4, "未置顶");
+    IsTop = false;
+}
+void W_top(HWND hwnd) {
+    SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+    SetWindowText(hButton4, "已置顶");
+    IsTop = true;
 }
 
 string getRandomName() {
@@ -85,14 +93,21 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
             else if ((HWND)lp == hButton3) {
                 reloadnames();
             }
+            else if ((HWND)lp == hButton4) {
+                if (IsTop) {
+                    W_not_top(hwnd);
+                }else {
+                    W_top(hwnd);
+                }
+            }
             break;
         case WM_CREATE:
             loadNames();
-            hEdit = CreateWindow("EDIT", "", WS_VISIBLE | WS_CHILD | ES_READONLY,       10, 10, 200, 20,hwnd, NULL, NULL, NULL);
-            hButton = CreateWindow("BUTTON", "抽取一人", WS_VISIBLE | WS_CHILD,         10, 40, 100, 30,hwnd,(HMENU)1,NULL,NULL);
+            hEdit = CreateWindow("EDIT", "初始状态", WS_VISIBLE | WS_CHILD | ES_READONLY,       10, 10, 200, 20,hwnd, NULL, NULL, NULL);
+            hButton = CreateWindow("BUTTON", "抽取一人", WS_VISIBLE | WS_CHILD,                 10, 40, 100, 30,hwnd,(HMENU)1,NULL,NULL);
             hButton2 = CreateWindow("BUTTON", "滚动名单"/*Button2Name*/, WS_VISIBLE | WS_CHILD, 120, 40, 100, 30, hwnd, (HMENU)2, NULL, NULL);
-            hButton3 = CreateWindow("BUTTON", "重新加载名单", WS_VISIBLE | WS_CHILD,    230, 40, 100, 30, hwnd, (HMENU)3, NULL, NULL);
-
+            hButton3 = CreateWindow("BUTTON", "重新加载名单", WS_VISIBLE | WS_CHILD,            230, 40, 100, 30, hwnd, (HMENU)3, NULL, NULL);
+            hButton4 = CreateWindow("BUTTON", "未置顶", WS_VISIBLE | WS_CHILD,                  340, 40, 100, 30, hwnd, (HMENU)4, NULL, NULL);
             break;
         case WM_TIMER:
             if (wp == 1 && scrolling) {
@@ -120,7 +135,7 @@ int WINAPI WinMain(HINSTANCE hInst,HINSTANCE hPrevInst ,LPSTR args,int ncmdshow)
 if(!RegisterClass(&wc))
 return -1;
 
-CreateWindow("myWindowClass", WindowName , WS_OVERLAPPEDWINDOW | WS_VISIBLE,CW_USEDEFAULT,CW_USEDEFAULT ,500 ,500 ,NULL,NULL,NULL,NULL);
+CreateWindow("myWindowClass", WindowName , WS_OVERLAPPEDWINDOW | WS_VISIBLE,CW_USEDEFAULT,CW_USEDEFAULT ,W_weight,W_height,NULL,NULL,NULL,NULL);
 
 MSG msg ={0};
 while(GetMessage(&msg,NULL,NULL,NULL ))

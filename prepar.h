@@ -13,7 +13,11 @@ HWND hButton;//按钮：“抽取一人”
 HWND hButton2;//按钮：”滚动抽取“
 bool scrolling = false;//是否滚动(全局变量)
 HWND hButton3;//重新读取名单
-HWND hButton4;//显示名称
+HWND hButton4;//窗口置顶
+bool IsTop = false;//是否置顶
+
+int W_height = 120;
+int W_weight = 460;
 
 
 //???
