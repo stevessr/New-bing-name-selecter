@@ -1,26 +1,9 @@
-﻿#include <windows.h>
-#include <fstream>
-#include <vector>
-#include <string>
-#include <ctime>
+﻿
 
-#include "prepar.h"
-
-using namespace std;
-
-HWND hEdit;
-HWND hButton;//按钮一号“抽取一人”
-vector<string> names;
-
-HWND hButton2;//按钮二号
-bool scrolling = false;//是否滚动
-HWND hButton3;
-HWND hButton4;
-
-string UTF8ToGB(const char* str);
+#include "perinlucde.h";
 
 void loadNames() {
-    ifstream file("名单.txt");
+    ifstream file(namefile);
     string name;
     //int a = 10;
     while (getline(file, name)) {
@@ -28,18 +11,26 @@ void loadNames() {
         getline(file, name);
         name = UTF8ToGB(name.c_str()).c_str();
         names.push_back(name);
+        SetWindowText(hEdit, "文件初始化成功");
     }
 }
 
-/*string getRandomName2() {
-    srand(time(0));
-    int index = rand() % names.size();
-    return names[index];
+void reloadnames() {
+    ifstream file(namefile);
+    names.clear();
+    string name;
+    //int a = 10;
+    while (getline(file, name)) {
+        //while (a-- > 0) {
+        getline(file, name);
+        name = UTF8ToGB(name.c_str()).c_str();
+        names.push_back(name);
+    }
+    SetWindowText(hEdit, "文件重新加载成功");
 }
-*/
 
 void openFile() {
-    ShellExecute(NULL, "open", "名单.txt", NULL, NULL, SW_SHOWNORMAL);
+    ShellExecute(NULL, "open", namefileW, NULL, NULL, SW_SHOWNORMAL);
 }
 
 /*void speakName(HWND hwnd) {
@@ -58,11 +49,13 @@ void openFile() {
 void startScrolling(HWND hwnd) {
     scrolling = true;
     SetTimer(hwnd, 1, Movingspeed, NULL);
+    SetWindowText(hButton2, "滚动中");
 }
 
 void stopScrolling(HWND hwnd) {
     scrolling = false;
     KillTimer(hwnd, 1);
+    SetWindowText(hButton2, "滚动名单");
 }
 
 string getRandomName() {
@@ -89,18 +82,17 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     startScrolling(hwnd);
                 }
             }
+            else if ((HWND)lp == hButton3) {
+                reloadnames();
+            }
             break;
         case WM_CREATE:
             loadNames();
-            hEdit = CreateWindow("EDIT", "", WS_VISIBLE | WS_CHILD | ES_READONLY,
-                                 10, 10, 200, 20,
-                                 hwnd, NULL, NULL, NULL);
-            hButton = CreateWindow("BUTTON", "抽取一人", WS_VISIBLE | WS_CHILD,
-                                   10, 40, 100, 30,
-                                   hwnd,(HMENU)1,NULL,NULL);
-            hButton2 = CreateWindow("BUTTON", "开始/停止滚动", WS_VISIBLE | WS_CHILD,
-                120, 40, 100, 30,
-                hwnd, (HMENU)2, NULL, NULL);
+            hEdit = CreateWindow("EDIT", "", WS_VISIBLE | WS_CHILD | ES_READONLY,       10, 10, 200, 20,hwnd, NULL, NULL, NULL);
+            hButton = CreateWindow("BUTTON", "抽取一人", WS_VISIBLE | WS_CHILD,         10, 40, 100, 30,hwnd,(HMENU)1,NULL,NULL);
+            hButton2 = CreateWindow("BUTTON", "滚动名单"/*Button2Name*/, WS_VISIBLE | WS_CHILD, 120, 40, 100, 30, hwnd, (HMENU)2, NULL, NULL);
+            hButton3 = CreateWindow("BUTTON", "重新加载名单", WS_VISIBLE | WS_CHILD,    230, 40, 100, 30, hwnd, (HMENU)3, NULL, NULL);
+
             break;
         case WM_TIMER:
             if (wp == 1 && scrolling) {
@@ -114,6 +106,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
         default:
             return DefWindowProc(hwnd,msg ,wp ,lp);
     }
+    return DefWindowProc(hwnd, msg, wp, lp) ;
 }
 
 int WINAPI WinMain(HINSTANCE hInst,HINSTANCE hPrevInst ,LPSTR args,int ncmdshow){
@@ -127,9 +120,7 @@ int WINAPI WinMain(HINSTANCE hInst,HINSTANCE hPrevInst ,LPSTR args,int ncmdshow)
 if(!RegisterClass(&wc))
 return -1;
 
-CreateWindow("myWindowClass","一个窗口",WS_OVERLAPPEDWINDOW|WS_VISIBLE ,
-             CW_USEDEFAULT,CW_USEDEFAULT ,500 ,500 ,
-             NULL,NULL,NULL,NULL);
+CreateWindow("myWindowClass", WindowName , WS_OVERLAPPEDWINDOW | WS_VISIBLE,CW_USEDEFAULT,CW_USEDEFAULT ,500 ,500 ,NULL,NULL,NULL,NULL);
 
 MSG msg ={0};
 while(GetMessage(&msg,NULL,NULL,NULL ))
@@ -142,24 +133,3 @@ return 0;
 
 
 
-string UTF8ToGB(const char* str) {
-    string result;
-    WCHAR* strSrc;
-    LPSTR szRes;
-
-    //获得临时变量的大小
-    int i = MultiByteToWideChar(CP_UTF8, 0, str, -1, NULL, 0);
-    strSrc = new WCHAR[i + 1];
-    MultiByteToWideChar(CP_UTF8, 0, str, -1, strSrc, i);
-
-    //获得临时变量的大小
-    i = WideCharToMultiByte(CP_ACP, 0, strSrc, -1, NULL, 0, NULL, NULL);
-    szRes = new CHAR[i + 1];
-    WideCharToMultiByte(CP_ACP, 0, strSrc, -1, szRes, i, NULL, NULL);
-
-    result = szRes;
-    delete[]strSrc;
-    delete[]szRes;
-
-    return result;
-}

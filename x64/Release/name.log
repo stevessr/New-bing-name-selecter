@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\Administrator\Documents\gc\name\New-bing----\main.cpp(112): warning C4715: “WindowProcedure”: 不是所有的控件路径都返回值
+  name.vcxproj -> C:\Users\Administrator\Documents\gc\name\New-bing----\x64\Release\name.exe

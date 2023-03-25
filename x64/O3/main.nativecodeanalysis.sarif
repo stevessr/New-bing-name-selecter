@@ -1,0 +1,136 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "算术溢出: 使用 4 字节值上的运算符 + ，然后将结果转换到 8 字节值。在调用运算符 + 之前将值强制转换为宽类型可避免溢出(io.2)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Administrator/Documents/gc/name/New-bing----/UTF8toGBK.h"
+                },
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 26
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "UTF8ToGB",
+                  "decoratedName": "?UTF8ToGB@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "算术溢出: 使用 4 字节值上的运算符 + ，然后将结果转换到 8 字节值。在调用运算符 + 之前将值强制转换为宽类型可避免溢出(io.2)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Administrator/Documents/gc/name/New-bing----/UTF8toGBK.h"
+                },
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 24
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "UTF8ToGB",
+                  "decoratedName": "?UTF8ToGB@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "“WinMain”的批注不一致: 此实例包含 无批注。请参见 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\um\\winbase.h(1006)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Administrator/Documents/gc/name/New-bing----/main.cpp"
+                },
+                "region": {
+                  "startLine": 114,
+                  "startColumn": 12,
+                  "endLine": 114,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WinMain",
+                  "decoratedName": "WinMain",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/Administrator/Documents/gc/name/New-bing----/UTF8toGBK.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "ee3b93e9e6778ba2629d61be33d23c91423a50b2333c906fe8b32eebf760fbd6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Administrator/Documents/gc/name/New-bing----/main.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "01d1759a338d05c16ffa1c80051075175a882e4d99deec812308ff97ce766fc7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/administrator/documents/gc/name/new-bing----/prepar.h"
+          },
+          "hashes": {
+            "sha-256": "b37f37815e62c0cd4f55b5cae776c97efe05431c75cb79ebb478321b5ed155e3"
+          }
+        }
+      ]
+    }
+  ]
+}
