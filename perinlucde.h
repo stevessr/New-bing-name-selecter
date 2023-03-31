@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <ctime>
+#include <string>
 
 #include "prepar.h"
 #include "UTF8toGBK.h"
