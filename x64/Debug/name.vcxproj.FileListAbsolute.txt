@@ -1,2 +1,3 @@
 C:\Users\Administrator\Documents\gc\name\x64\Debug\name.exe
 C:\Users\Administrator\Documents\gc\name\New-bing----\x64\Debug\name.exe
+D:\BaiduNetdiskDownload\grasscutter\name\x64\Debug\name.exe

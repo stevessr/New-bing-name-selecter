@@ -19,6 +19,9 @@ bool IsTop = false;//是否置顶
 bool RandInit = false;//随机数种子是否设定
 HWND hButton5;//设置随机数
 HWND hButton6;//循环速度
+HWND hButton7;//是否启用UTF8toGBK
+bool UTF8toGBKS = false ;
+
 
 int W_height = 150;//cy
 int W_weight = 460;//cx

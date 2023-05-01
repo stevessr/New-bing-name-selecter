@@ -6,9 +6,13 @@
 #include <ctime>
 #include <string>
 
-#include "prepar.h"
-#include "UTF8toGBK.h"
-
 using namespace std;
 vector<string> names;
+
+#include "prepar.h"
+#include "UTF8toGBK.h"
+#include "useless.h"
+#include "bottomF.h";
+#include "buttomS.h"
+
 
