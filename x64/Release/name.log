@@ -1,1 +1,4 @@
-﻿  name.vcxproj -> C:\Users\Administrator\Documents\gc\name\New-bing----\x64\Release\name.exe
+﻿  main.cpp
+D:\BaiduNetdiskDownload\grasscutter\name\buttom\useless.h(1,1): warning C4828: 文件包含在偏移 0x1af 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
+D:\BaiduNetdiskDownload\grasscutter\name\preinclude\perinlucde.h(15,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  name.vcxproj -> D:\BaiduNetdiskDownload\grasscutter\name\x64\Release\name.exe
