@@ -1,0 +1,227 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "算术溢出: 使用 4 字节值上的运算符 - ，然后将结果转换到 8 字节值。在调用运算符 - 之前将值强制转换为宽类型可避免溢出(io.2)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/BaiduNetdiskDownload/grasscutter/name/library/prepar.h"
+                },
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 14,
+                  "endLine": 39,
+                  "endColumn": 29
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WindowsInit",
+                  "decoratedName": "?WindowsInit@@YAXPEAUHWND__@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "算术溢出: 使用 4 字节值上的运算符 - ，然后将结果转换到 8 字节值。在调用运算符 - 之前将值强制转换为宽类型可避免溢出(io.2)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/BaiduNetdiskDownload/grasscutter/name/library/prepar.h"
+                },
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 13,
+                  "endLine": 40,
+                  "endColumn": 29
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WindowsInit",
+                  "decoratedName": "?WindowsInit@@YAXPEAUHWND__@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "算术溢出: 使用 4 字节值上的运算符 + ，然后将结果转换到 8 字节值。在调用运算符 + 之前将值强制转换为宽类型可避免溢出(io.2)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/BaiduNetdiskDownload/grasscutter/name/library/UTF8toGBK.h"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 84
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "UTF8ToGB",
+                  "decoratedName": "?UTF8ToGB@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "算术溢出: 使用 4 字节值上的运算符 + ，然后将结果转换到 8 字节值。在调用运算符 + 之前将值强制转换为宽类型可避免溢出(io.2)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/BaiduNetdiskDownload/grasscutter/name/library/UTF8toGBK.h"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 92
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "UTF8ToGB",
+                  "decoratedName": "?UTF8ToGB@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "“WinMain”的批注不一致: 此实例包含 无批注。请参见 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\um\\winbase.h(1006)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/BaiduNetdiskDownload/grasscutter/name/main.cpp"
+                },
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 12,
+                  "endLine": 26,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WinMain",
+                  "decoratedName": "WinMain",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/BaiduNetdiskDownload/grasscutter/name/library/prepar.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "eae52e708ce58e8d1ee609b508eb44c6b5cdcbbe263f2d316a6808cc5a0f71c2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/BaiduNetdiskDownload/grasscutter/name/library/UTF8toGBK.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "c7dcda2578c865fe8e04ea1161b0144be0ad5d872c99d3389f253df76f389df2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/BaiduNetdiskDownload/grasscutter/name/main.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "3f107a28b89f150298992fe9baa4ee740920fcaf994809374c275133542d8c24"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/baidunetdiskdownload/grasscutter/name/library/perinlucde.h"
+          },
+          "hashes": {
+            "sha-256": "ed08f0d5af407492682e01e926c71c7f1adeb3865007c272338ebd2262ae43d6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/baidunetdiskdownload/grasscutter/name/library/useless.h"
+          },
+          "hashes": {
+            "sha-256": "ccca3b1f612873ab95b5826f38912fadd7f9bd14b9a273b27b1188490ce8f2df"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/baidunetdiskdownload/grasscutter/name/library/bottomf.h"
+          },
+          "hashes": {
+            "sha-256": "2d846ff57daeca075efb3163b8ff99b43575bd99ff592eb7adbd5f3fa8a4a81c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/baidunetdiskdownload/grasscutter/name/library/buttoms.h"
+          },
+          "hashes": {
+            "sha-256": "da0ff873d4be8f4c62619d80c22ed8b0bc7b41242e2cdfd399f86f2e4955d2de"
+          }
+        }
+      ]
+    }
+  ]
+}

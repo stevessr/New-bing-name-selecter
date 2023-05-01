@@ -175,13 +175,13 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bottomF.h" />
-    <ClInclude Include="buttomS.h" />
-    <ClInclude Include="perinlucde.h" />
-    <ClInclude Include="prepar.h" />
+    <ClInclude Include="buttom\bottomF.h" />
+    <ClInclude Include="buttom\buttomS.h" />
+    <ClInclude Include="buttom\prepar.h" />
+    <ClInclude Include="buttom\useless.h" />
+    <ClInclude Include="buttom\UTF8toGBK.h" />
+    <ClInclude Include="preinclude\perinlucde.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="useless.h" />
-    <ClInclude Include="UTF8toGBK.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="name.rc" />

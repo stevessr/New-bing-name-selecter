@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Header Files\buttom">
+      <UniqueIdentifier>{e95209a9-cf50-40dc-ac87-8d225aa7332e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\preinclude">
+      <UniqueIdentifier>{d0cc242f-0cf5-4548-92b2-d892a46de2b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -20,26 +26,26 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="prepar.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="buttom\bottomF.h">
+      <Filter>Header Files\buttom</Filter>
+    </ClInclude>
+    <ClInclude Include="buttom\buttomS.h">
+      <Filter>Header Files\buttom</Filter>
+    </ClInclude>
+    <ClInclude Include="buttom\prepar.h">
+      <Filter>Header Files\buttom</Filter>
+    </ClInclude>
+    <ClInclude Include="buttom\useless.h">
+      <Filter>Header Files\buttom</Filter>
+    </ClInclude>
+    <ClInclude Include="buttom\UTF8toGBK.h">
+      <Filter>Header Files\buttom</Filter>
+    </ClInclude>
+    <ClInclude Include="preinclude\perinlucde.h">
+      <Filter>Header Files\preinclude</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UTF8toGBK.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="perinlucde.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="useless.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bottomF.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="buttomS.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\preinclude</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
